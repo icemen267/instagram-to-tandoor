@@ -4,15 +4,13 @@ services:
   app:
     build: .
     ports:
-      - "5000:5000"
+      - "5001:5000"
     environment:
-      # BASE_URL_MEALIE=
-      - BASE_URL_TANDOOR=
-      # TOKEN_MEALIE=
-      - TOKEN_TANDOOR=
+      - BASE_URL_MEALIE=${BASE_URL_MEALIE}
+      - TOKEN_MEALIE=${TOKEN_MEALIE}
       # your language code (en, de)
       - LANGUAGE_CODE=de
       # your db secret (random string)
-      - DB_SECRET=
+      - DB_SECRET=${DB_SECRET}
     volumes:
       - ./app.db:/app/app.db
